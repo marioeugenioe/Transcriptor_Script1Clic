@@ -11,7 +11,8 @@ Herramienta gratuita para Google Colab que transcribe audio y video usando model
 - 🎬 **Audio y video**: acepta mp3, wav, m4a, ogg, flac, aac, mp4, mov, mkv, webm, entre otros. Si subes un video, extrae el audio automáticamente — no hace falta convertir nada antes.
 - 🧠 **6 modelos para elegir** desde la interfaz, sin volver a ejecutar celdas, cada uno con sus pros y contras a la vista.
 - 🌐 **Casi 100 idiomas**: detección automática del idioma, o selección manual desde una lista desplegable (útil si el audio es corto, ruidoso o tiene acento fuerte).
-- ❌ **Cancelar sin esperar**: si ya empezó a transcribir y subiste el archivo equivocado, un botón la detiene al instante. Si el archivo todavía se está *subiendo* (barra de carga), recargar la pestaña corta esa carga de inmediato (ver detalles en "Solución de problemas").
+- ❌ **¿Archivo equivocado?** Recarga la pestaña (F5) para cortarlo al instante, sea que se esté subiendo o ya transcribiendo. No perderás el modelo ya cargado ni necesitas volver a ejecutar celdas.
+- ⬇️ **Descargas directas**: los 4 formatos (.txt, .srt, .vtt, .docx) se descargan directamente a tu computadora con un clic, sin abrirse en una pestaña nueva.
 - 🌍 **Traducción al inglés** con un solo clic (opcional).
 - ⏱️ **Marcas de tiempo opcionales** en el texto transcrito.
 - 📄 **Exportación en 4 formatos**: texto en párrafos (`.txt`), subtítulos (`.srt` y `.vtt`) y documento de Word (`.docx`).
@@ -29,9 +30,8 @@ Herramienta gratuita para Google Colab que transcribe audio y video usando model
    - Sube tu archivo de audio o video.
    - Elige modelo, idioma, traducción y marcas de tiempo.
    - Presiona **"📝 Transcribir"**.
-   - Descarga el resultado en el formato que necesites.
-   - Si subiste el archivo equivocado y **ya empezó a transcribir**, presiona **"❌ Cancelar"** para detener la transcripción al instante y subir el correcto, sin esperar a que termine.
-   - Si subiste el archivo equivocado y **todavía se está subiendo** (barra de carga visible), recarga la pestaña del navegador (F5) — es la única forma de cortar esa carga, por una limitación de Gradio (ver más abajo).
+   - Descarga el resultado en el formato que necesites: los 4 archivos se descargan directamente a tu PC con un clic (ya no se abren en una pestaña nueva).
+   - Si subiste el archivo equivocado (subiéndose o ya transcribiendo), recarga la pestaña del navegador (F5) — no perderás el modelo ya cargado, solo se reinicia la página.
 5. Si algo falla, vuelve a ejecutar la Celda 1 y luego la Celda 2.
 
 > 💡 La única opción que se define *antes* de abrir la interfaz es si quieres un enlace público (para usarlo desde el celular); está arriba de la Celda 2, como un simple check ✅/❌. El modelo y el idioma se eligen todos dentro de la interfaz, y se pueden cambiar las veces que quieras sin volver a ejecutar nada.
@@ -70,7 +70,7 @@ Casi 100 idiomas disponibles en el desplegable manual (español, inglés, franc�
 | `.vtt` | Subtítulos en formato web (compatible con reproductores HTML5) |
 | `.docx` | Documento de Word con la transcripción, listo para editar o compartir |
 
-El texto también se puede editar directamente dentro de la interfaz antes de descargarlo.
+El texto también se puede editar directamente dentro de la interfaz antes de descargarlo. Los 4 botones de descarga guardan el archivo directamente en tu computadora (carpeta de Descargas del navegador); ninguno se abre en una pestaña nueva.
 
 ---
 
@@ -88,8 +88,7 @@ El texto también se puede editar directamente dentro de la interfaz antes de de
 |---|---|
 | Error en la instalación (Celda 1) | Vuelve a ejecutarla. Si persiste, `Entorno de ejecución` → `Reiniciar sesión` y ejecuta la Celda 1 de nuevo |
 | "Faltan dependencias" en la Celda 2 | Ejecuta la Celda 1, espera `✅ Todo listo`, luego la Celda 2 |
-| Subí el archivo equivocado y **ya empezó a transcribir** | Presiona "❌ Cancelar" junto al botón "Transcribir" — detiene el proceso al instante, sin esperar a que termine, para que subas el correcto |
-| Subí el archivo equivocado y **todavía se está subiendo** (barra de carga) | **Recarga la pestaña del navegador (F5).** Gradio no permite cancelar ni reemplazar un archivo mientras se está subiendo — es una limitación de la plataforma, no del código. Recargar corta la carga al instante y no pierdes el modelo ya cargado en Colab; solo se reinicia la página, no hace falta volver a ejecutar celdas |
+| Subí el archivo equivocado (subiéndose o ya transcribiendo) | **Recarga la pestaña del navegador (F5).** Gradio no permite cancelar ni reemplazar un archivo a medio proceso — es una limitación de la plataforma, no del código. Recargar corta lo que esté pasando al instante y no pierdes el modelo ya cargado en Colab; solo se reinicia la página, no hace falta volver a ejecutar celdas |
 | Falla la transcripción | Puede deberse a un archivo dañado, un formato no soportado, un archivo muy largo para la sesión gratuita de Colab, o memoria insuficiente. Prueba con otro archivo o con un modelo más liviano (por ejemplo "Rápido" en vez de "Máxima precisión") |
 | No se detecta voz | Verifica que el archivo realmente contenga audio y prueba con otro archivo |
 
