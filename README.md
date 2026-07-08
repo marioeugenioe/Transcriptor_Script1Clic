@@ -15,7 +15,7 @@ Herramienta gratuita para Google Colab que transcribe audio y video usando model
 - 🌍 **Traducción al inglés** con un solo clic (opcional).
 - ⏱️ **Marcas de tiempo opcionales** en el texto transcrito.
 - 📄 **Exportación en 4 formatos**: texto en párrafos (`.txt`), subtítulos (`.srt` y `.vtt`) y documento de Word (`.docx`).
-- - ⬇️ **Descargas directas**: los 4 formatos (.txt, .srt, .vtt, .docx) se descargan directamente a tu computadora con un clic, sin abrirse en una pestaña nueva.
+- ⬇️ **Descargas directas**: los 4 formatos (.txt, .srt, .vtt, .docx) se descargan directamente a tu computadora con un clic, sin abrirse en una pestaña nueva.
 - ⚡ **Funciona con GPU o CPU** (con GPU es mucho más rápido).
 - 🔗 **Enlace público opcional** para abrir la herramienta desde el celular.
 
