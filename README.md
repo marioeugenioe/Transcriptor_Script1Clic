@@ -11,6 +11,7 @@ Herramienta gratuita para Google Colab que transcribe audio y video usando model
 - 🎬 **Audio y video**: acepta mp3, wav, m4a, ogg, flac, aac, mp4, mov, mkv, webm, entre otros. Si subes un video, extrae el audio automáticamente — no hace falta convertir nada antes.
 - 🧠 **6 modelos para elegir** desde la interfaz, sin volver a ejecutar celdas, cada uno con sus pros y contras a la vista.
 - 🌐 **Casi 100 idiomas**: detección automática del idioma, o selección manual desde una lista desplegable (útil si el audio es corto, ruidoso o tiene acento fuerte).
+- ❌ **Cancelar en cualquier momento**: si subiste el archivo equivocado, no hace falta esperar a que termine la transcripción — un botón la detiene al instante para que puedas subir el correcto.
 - 🌍 **Traducción al inglés** con un solo clic (opcional).
 - ⏱️ **Marcas de tiempo opcionales** en el texto transcrito.
 - 📄 **Exportación en 4 formatos**: texto en párrafos (`.txt`), subtítulos (`.srt` y `.vtt`) y documento de Word (`.docx`).
@@ -24,13 +25,15 @@ Herramienta gratuita para Google Colab que transcribe audio y video usando model
 1. **Abre el notebook en Google Colab.**
 2. *(Recomendado)* Activa la GPU: `Entorno de ejecución` → `Cambiar tipo de entorno` → `T4 GPU`.
 3. **Ejecuta la Celda 1** (instalación de dependencias). Tarda 2-4 minutos. Espera el mensaje `✅ Todo listo`. Solo hace falta ejecutarla una vez por sesión.
-4. **Ejecuta la Celda 2** (configuración inicial): elige qué modelo se precarga y si quieres enlace público. Estas opciones también se pueden cambiar después desde la interfaz, sin volver a ejecutar celdas.
-5. **Ejecuta la Celda 3** para abrir la interfaz visual. Desde ahí puedes:
-   - Subir tu archivo de audio o video.
-   - Elegir modelo, idioma, traducción y marcas de tiempo.
-   - Presionar **"📝 Transcribir"**.
-   - Descargar el resultado en el formato que necesites.
-6. Si algo falla, vuelve a ejecutar la Celda 1, luego la 2 y la 3.
+4. **Ejecuta la Celda 2** para abrir la interfaz visual. Ahí, dentro del navegador, eliges todo lo demás:
+   - Sube tu archivo de audio o video.
+   - Elige modelo, idioma, traducción y marcas de tiempo.
+   - Presiona **"📝 Transcribir"**.
+   - Descarga el resultado en el formato que necesites.
+   - Si subiste el archivo equivocado, presiona **"❌ Cancelar"** para detener la transcripción al instante y subir el correcto, sin esperar a que termine.
+5. Si algo falla, vuelve a ejecutar la Celda 1 y luego la Celda 2.
+
+> 💡 La única opción que se define *antes* de abrir la interfaz es si quieres un enlace público (para usarlo desde el celular); está arriba de la Celda 2, como un simple check ✅/❌. El modelo y el idioma se eligen todos dentro de la interfaz, y se pueden cambiar las veces que quieras sin volver a ejecutar nada.
 
 ---
 
@@ -83,7 +86,8 @@ El texto también se puede editar directamente dentro de la interfaz antes de de
 | Problema | Solución |
 |---|---|
 | Error en la instalación (Celda 1) | Vuelve a ejecutarla. Si persiste, `Entorno de ejecución` → `Reiniciar sesión` y ejecuta la Celda 1 de nuevo |
-| "Faltan dependencias" en la Celda 3 | Ejecuta la Celda 1, espera `✅ Todo listo`, luego la Celda 2 y la 3 |
+| "Faltan dependencias" en la Celda 2 | Ejecuta la Celda 1, espera `✅ Todo listo`, luego la Celda 2 |
+| Subí el archivo equivocado | Presiona "❌ Cancelar" junto al botón "Transcribir" — detiene el proceso al instante, sin esperar a que termine, para que subas el correcto |
 | Falla la transcripción | Puede deberse a un archivo dañado, un formato no soportado, un archivo muy largo para la sesión gratuita de Colab, o memoria insuficiente. Prueba con otro archivo o con un modelo más liviano (por ejemplo "Rápido" en vez de "Máxima precisión") |
 | No se detecta voz | Verifica que el archivo realmente contenga audio y prueba con otro archivo |
 
